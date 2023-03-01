@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"primary"} variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/home">
           <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -29,7 +29,7 @@ export default function Header() {
               <NavDropdown.Item href="#action/3.2" className='navBar__text'>
                 <span className='hotText'>Hot Novels</span>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3" className='navBar__text'>Something</NavDropdown.Item>
+              <NavDropdown.Item href="/Connexion" className='navBar__text'>Connexion</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4" className='navBar__text'>
                 Separated link
