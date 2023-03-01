@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header.component';
-import Index from './pages/Home/home';
+import Recipes from './pages/Recipe/recipes.page';
 import Context from './components/Context/Context.component';
+import UserInterface from './pages/Profile/User.page';
+import Connexions from './pages/Connexion/LoginRegister.page';
+
 
 import './styles/App.css';
 
@@ -14,10 +17,9 @@ function App() {
     <Context.Provider value={{darkMode, setDarkMode }}>
     <Header />
     <Routes>
-      <Route path='/' element={<Index />} />
-      <Route path='/Login' element={<Index />} />
-      <Route path='/Register' element={<Index />} />
-      <Route path='/' element={<Index />} />
+      <Route path='/home' element={<Recipes />} />
+      <Route path='/Connexion' element={<Connexions />} />
+      <Route path='/user' element={<UserInterface />} />
     </Routes>
     </Context.Provider>
     </BrowserRouter>
