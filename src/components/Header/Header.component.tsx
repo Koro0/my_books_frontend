@@ -14,7 +14,7 @@ import ThemeIconDark  from '../../assets/ligthMode/ampouleBlack.png';
 export default function Header() {
   const  {darkMode, setDarkMode}= useContext(Context);
   return (
-    <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"primary"} variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"white"} variant="dark">
       <Container>
         <Navbar.Brand href="/home">
           <Logo />
@@ -22,17 +22,16 @@ export default function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features" className='navBar__text'>Features</Nav.Link>
-            <Nav.Link href="#pricing" className='navBar__text'>Pricing</Nav.Link>
+            <Nav.Link href="/" className='navBar__text'>Accueil</Nav.Link>
+            <Nav.Link href="/Connexion" className='navBar__text'>Connexion</Nav.Link>
             <NavDropdown title="Novel" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1" className='navBar__text'>Recent</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className='navBar__text'>
                 <span className='hotText'>Hot Novels</span>
               </NavDropdown.Item>
-              <NavDropdown.Item href="/Connexion" className='navBar__text'>Connexion</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4" className='navBar__text'>
-                Separated link
+                Source link
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
