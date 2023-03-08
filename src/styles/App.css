@@ -1,3 +1,13 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 @import './header.scss';
 @import './recipes.style.scss';
+@import './connexion.styles.scss';
+
+.darkMode {
+    background: #1d1b1b;
+    color: whitesmoke;
+}
+.lightMode {
+    background: white;
+    color: #000;
+}
