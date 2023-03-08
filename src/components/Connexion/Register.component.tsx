@@ -61,7 +61,7 @@ export default function Register() {
           </InputGroup>
         </Form.Group>
       </Row>
-      <Button type="submit">Submit form</Button>
+      <Button type="submit">S'enregister</Button>
     </Form>
   );
 }
