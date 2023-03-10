@@ -4,9 +4,9 @@ const Footer = () => {
         <div className="footer">
             <div className="footer__Box">
                 <div className="footer__Social">
-                    <span>social icons here</span>
-                    <span>social icons here</span>
-                    <span>social icons here</span>
+                    <p>social icons </p>
+                    <p>social icons </p>
+                    <p>social icons </p>
                 </div>
                 <div>
                     <h3>Recette</h3>
