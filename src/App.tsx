@@ -8,6 +8,8 @@ import Connexions from './pages/Connexion/Connexion.page';
 import Recipe from './pages/Recipe/recipe.page';
 import Index from './pages/Index/Index.page';
 import Footer from './components/Footer/Footer.component';
+import Error from './pages/Error/error.page';
+import Blog from './pages/Blog/blog.page';
 
 import './styles/App.css';
 
@@ -27,6 +29,8 @@ function App() {
             <Route path='/recipe/:id' element={<Recipe />} />
             <Route path='/Connexion' element={<Connexions />} />
             <Route path='/user' element={<UserInterface />} />
+            <Route path='/Blog' element={<Blog />} />
+            <Route path='/*' element={<Error />} />
           </Routes>
         </main>
         <footer>
