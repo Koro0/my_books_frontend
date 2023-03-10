@@ -23,7 +23,6 @@ export default function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/" className='navBar__text'>Accueil</Nav.Link>
-            <Nav.Link href="/Connexion" className='navBar__text'>Connexion</Nav.Link>
             <NavDropdown title="Novel" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1" className='navBar__text'>Recent</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className='navBar__text'>
@@ -34,6 +33,8 @@ export default function Header() {
                 Source link
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/Connexion" className='navBar__text'>Connexion</Nav.Link>
+            <Nav.Link href="/Blog" className='navBar__text'>Blog</Nav.Link>
           </Nav>
           <Nav>
             <button id='themeButton' onClick={() => setDarkMode(!darkMode)} >
