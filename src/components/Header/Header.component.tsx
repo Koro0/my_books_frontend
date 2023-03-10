@@ -14,7 +14,7 @@ import ThemeIconDark  from '../../assets/ligthMode/ampouleBlack.png';
 export default function Header() {
   const  {darkMode, setDarkMode}= useContext(Context);
   return (
-    <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"white"} variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"#f8c291"} variant="dark">
       <Container>
         <Navbar.Brand href="/home">
           <Logo />
@@ -24,7 +24,7 @@ export default function Header() {
           <Nav className="me-auto">
             <Nav.Link href="/" className='navBar__text'>Accueil</Nav.Link>
             <NavDropdown title="Novel" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1" className='navBar__text'>Recent</NavDropdown.Item>
+              <NavDropdown.Item href="/novels" className='navBar__text'>Recent</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className='navBar__text'>
                 <span className='hotText'>Hot Novels</span>
               </NavDropdown.Item>
