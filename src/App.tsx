@@ -10,8 +10,9 @@ import Index from './pages/Index/Index.page';
 import Footer from './components/Footer/Footer.component';
 import Error from './pages/Error/error.page';
 import Blog from './pages/Blog/blog.page';
+import Novels from './pages/Novels/novel.page';
 
-import './styles/App.css';
+import './styles/App.scss';
 
 function App() {
   const [darkMode, setDarkMode ]= useState(false)
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Index />} />
             <Route path='/home' element={<Recipes />} />
+            <Route path='/novels' element={<Novels />} />
             <Route path='/recipe/:id' element={<Recipe />} />
             <Route path='/Connexion' element={<Connexions />} />
             <Route path='/user' element={<UserInterface />} />
