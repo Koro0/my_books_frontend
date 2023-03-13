@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer.component';
 import Error from './pages/Error/error.page';
 import Blog from './pages/Blog/blog.page';
 import Novels from './pages/Novels/novel.page';
+import NewRecipe from './pages/New_recipe/newRecipe.page';
 
 import './styles/App.scss';
 
@@ -26,7 +27,8 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Index />} />
-            <Route path='/home' element={<Recipes />} />
+            <Route path='/recipes' element={<Recipes />} />
+            <Route path='/add_recipes' element={<NewRecipe />} />
             <Route path='/novels' element={<Novels />} />
             <Route path='/recipe/:id' element={<Recipe />} />
             <Route path='/Connexion' element={<Connexions />} />
