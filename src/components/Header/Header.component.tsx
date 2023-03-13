@@ -16,13 +16,19 @@ export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"#f8c291"} variant="dark">
       <Container>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/" className='navBar__text'>Accueil</Nav.Link>
+            <NavDropdown title="Recettes" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/recipes" className='navBar__text'>Recent</NavDropdown.Item>
+              <NavDropdown.Item href="/add_recipes" className='navBar__text'>
+                <span className='hotText'>Ajout</span>
+              </NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="Novel" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/novels" className='navBar__text'>Recent</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className='navBar__text'>
