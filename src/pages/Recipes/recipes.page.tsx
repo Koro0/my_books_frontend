@@ -5,11 +5,15 @@ import { useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+import ShowDate from '../../components/utils/showDate.component';
+
 export type Recipe = {
   recipeId:number;
   title:string;
   image:string | null;
   content:string | null;
+  author:number;
+  createdAt: Date;
 }
  function Recipes() {
   const [recipes, setRecipes] = useState<Recipe[] | null> ([]);
@@ -47,6 +51,12 @@ export type Recipe = {
                   </Card.Text>
                   <Button onClick={()=> handleClick(data.recipeId)} variant="primary">Go somewhere</Button>
                 </Card.Body>
+                <Card.Footer>
+                  <Card.Subtitle>
+                    Added by : {data.author}
+                  </Card.Subtitle>
+                  <ShowDate date={data.createdAt} />
+                </Card.Footer>
                </Card>
             </article>
           )}
