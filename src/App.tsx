@@ -38,6 +38,7 @@ function App() {
             <Route path='/user' element={<UserInterface />} />
             <Route path='/Blog' element={<Blog />} />
             <Route path='/Cocktail' element={<Cocktail />} />
+            <Route path='/Cocktail/id=:id' element={<Cocktail />} />
             <Route path='/*' element={<Error />} />
           </Routes>
         </main>
