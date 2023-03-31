@@ -30,9 +30,9 @@ export default function CocktailList() {
                 <Card.Body>
                 <Card.Title className='cocktail__title'>{data.title}</Card.Title>
                 <Card.Text> Difficulty : {data.difficulty}</Card.Text>
-                <Card.Text> Difficulty : {data.description}</Card.Text>
-                <Card.Text> Difficulty : {data.time}</Card.Text>
-                <Card.Text> Difficulty : {data.portion}</Card.Text>
+                <Card.Text> Description : {data.description}</Card.Text>
+                <Card.Text> Time : {data.time}</Card.Text>
+                <Card.Text> Portion : {data.portion}</Card.Text>
                 </Card.Body>
                 <Button onClick={()=> navigate(`/Cocktail/${data.cocktailId}`)} variant="primary">Go recipe !</Button>
             </Card>

@@ -1,6 +1,6 @@
 
 export interface Drink {
-    cocktailId:string;
+    cocktailId:number;
     title:string;
     description:string;
     portion:string;
@@ -19,12 +19,14 @@ export interface Drinks {
 
 export interface IngredientItem {
     ingredientId:number;
+    cocktailId:number;
     name:string;
     quantity:string;
 }
 
 export interface MethodStep {
     methodId:number;
+    cocktailId:number;
     stepNumber:number;
     description:string;
 }
