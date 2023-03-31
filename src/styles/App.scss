@@ -5,10 +5,11 @@
 @import './footer.style.scss';
 @import './error.style.scss';
 @import './cocktail.style.scss';
+@import './index.style.scss';
 
 .darkMode {
     background: #1d1b1b;
-    color: whitesmoke;
+    color: rgb(219, 44, 44);
 }
 .lightMode {
     background: red;

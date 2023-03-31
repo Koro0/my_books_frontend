@@ -1,8 +1,16 @@
 .footer {
     padding: 0;
-
     &__Box {
         background-color: #e55039;
         display: flex;
+    }
+    &__Social {
+        flex: 1;
+    }
+    &__Recipe {
+        flex: 1;
+    }
+    &__Thematique {
+        flex: 1;
     }
 }
