@@ -3,30 +3,17 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
+import { Drinks } from './cocktailInterfaces';
 
-interface Drinks {
-    id:string;
-    title:string;
-    image:string;
-    ingredients:string;
-    difficulty:string;
-}
 export default function CocktailList() {
     const [cocktailData, setCocktailData]=useState<Drinks[]>();
     const navigate = useNavigate();
-    const config = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '27b55ce60fmsh7b60b336e57e5fdp1adba0jsnb4b2bdb12282',
-          'X-RapidAPI-Host': 'the-cocktail-db3.p.rapidapi.com'
-        }
-      };
 
     useEffect(()=> {
         const fetchCocktail = async () => {
-            await axios.get('https://the-cocktail-db3.p.rapidapi.com/', config
-             ).then(({data}:{data:Drinks[]}) => {
-                setCocktailData(data);
+            await axios.get('http://localhost:3500/api/recipe/cocktail'
+             ).then(({data}) => {
+                setCocktailData(data.cocktails);
             }).catch(() => {
                 console.error();
             });
@@ -38,13 +25,16 @@ export default function CocktailList() {
     <div  className='cocktail'>
         {cocktailData && cocktailData.map((data)=> {
             return (
-            <Card style={{ width: '18rem' }} className='cocktail__card' key={data.id}>
-                <Card.Img  className='cocktail__img' src={data.image} alt={data.title} />
+            <Card style={{ width: '18rem' }} className='cocktail__card' key={data.cocktailId}>
+                {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
                 <Card.Body>
                 <Card.Title className='cocktail__title'>{data.title}</Card.Title>
                 <Card.Text> Difficulty : {data.difficulty}</Card.Text>
+                <Card.Text> Difficulty : {data.description}</Card.Text>
+                <Card.Text> Difficulty : {data.time}</Card.Text>
+                <Card.Text> Difficulty : {data.portion}</Card.Text>
                 </Card.Body>
-                <Button onClick={()=> navigate(`/Cocktail/id=${data.id}`)} variant="primary">Go recipe !</Button>
+                <Button onClick={()=> navigate(`/Cocktail/${data.cocktailId}`)} variant="primary">Go recipe !</Button>
             </Card>
             )
         })}
