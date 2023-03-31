@@ -8,7 +8,7 @@ const Footer = () => {
                     <p>social icons </p>
                     <p>social icons </p>
                 </div>
-                <div>
+                <div className="footer__Recipe">
                     <h3>Recette</h3>
                     <ul>
                         <li>1</li>
@@ -16,7 +16,7 @@ const Footer = () => {
                         <li>..</li>
                     </ul>
                 </div>
-                <div>
+                <div className="footer__Thematique">
                     <h3>Thematique</h3>
                 </div>
             </div>
