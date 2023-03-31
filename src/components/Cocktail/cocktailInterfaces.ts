@@ -1,17 +1,15 @@
 
 export interface Drink {
-    id:string;
+    cocktailId:string;
     title:string;
     description:string;
     portion:string;
     time:string;
     difficulty:string;
-    ingredientList:string[];
-    methodList:string[];
 }
 
 export interface Drinks {
-    id:string;
+    cocktailId:number;
     title:string;
     description:string;
     portion:string;
@@ -19,14 +17,22 @@ export interface Drinks {
     difficulty:string;
 }
 
-export interface Ingredient {
+export interface IngredientItem {
     ingredientId:number;
     name:string;
     quantity:string;
 }
 
-export interface Method {
+export interface MethodStep {
     methodId:number;
-    description:string;
     stepNumber:number;
+    description:string;
+}
+
+export type CocktailRouteParams = {
+    cocktailId:string;
+}
+
+export interface CocktailProps {
+    cocktail_id:string;
 }
