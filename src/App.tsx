@@ -15,6 +15,7 @@ import Blog from './pages/Blog/blog.page';
 import Novels from './pages/Novels/novel.page';
 import NewRecipe from './pages/New_recipe/newRecipe.page';
 import Cocktail from './pages/Cocktail/cocktail.page';
+import AllCocktails from './pages/Cocktail/allCocktails.page';
 
 import './styles/App.scss';
 
@@ -37,8 +38,8 @@ function App() {
             <Route path='/Connexion' element={<Connexions />} />
             <Route path='/user' element={<UserInterface />} />
             <Route path='/Blog' element={<Blog />} />
-            <Route path='/Cocktail' element={<Cocktail />} />
-            <Route path='/Cocktail/id=:id' element={<Cocktail />} />
+            <Route path='/Cocktail' element={<AllCocktails />} />
+            <Route path='/Cocktail/:cocktailId' element={<Cocktail />} />
             <Route path='/*' element={<Error />} />
           </Routes>
         </main>
