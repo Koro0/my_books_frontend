@@ -25,10 +25,10 @@ export default function CocktailList() {
     <div  className='cocktail'>
         {cocktailData && cocktailData.map((data)=> {
             return (
-            <Card style={{ width: '18rem' }} className='cocktail__card' key={data.cocktailId}>
+            <Card style={{ width: '18rem' }} className='cocktails__card' key={data.cocktailId}>
                 {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
                 <Card.Body>
-                <Card.Title className='cocktail__title'>{data.title}</Card.Title>
+                <Card.Title className='cocktails__title'>{data.title}</Card.Title>
                 <Card.Text> Difficulty : {data.difficulty}</Card.Text>
                 <Card.Text> Description : {data.description}</Card.Text>
                 <Card.Text> Time : {data.time}</Card.Text>

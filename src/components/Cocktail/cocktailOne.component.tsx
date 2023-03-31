@@ -2,15 +2,12 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-
-import Card from 'react-bootstrap/Card';
-
 import { Drink, IngredientItem, MethodStep, CocktailRouteParams } from './cocktailInterfaces';
 
 
- const CocktailOne = () => {
+export default function CocktailOne() {
   const {cocktailId} = useParams<CocktailRouteParams>();
-  const [cocktailData, setCocktailData]=useState<Drink[]>();
+  const [cocktailData, setCocktailData]=useState<Drink>();
   const [ingredientData, setIngredientData]=useState<IngredientItem[]>();
   const [methodData, setMethodData]=useState<MethodStep[]>();
 
@@ -30,44 +27,55 @@ import { Drink, IngredientItem, MethodStep, CocktailRouteParams } from './cockta
     console.log(cocktailData, ingredientData, methodData);
 
   return (
-    <div  className='cocktail'>
-        {cocktailData && cocktailData.map((data)=> {
-            return (
-            <Card style={{ width: '18rem' }} className='cocktail__card' key={data.cocktailId}>
-                {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
-                <Card.Header>
-                  <Card.Title className='cocktail__title'>{data.title}</Card.Title>
-                  <Card.Text> Difficulty : {data.difficulty}</Card.Text>
-                  <Card.Text> Difficulty : {data.description}</Card.Text>
-                  <Card.Text> Difficulty : {data.time}</Card.Text>
-                  <Card.Text> Difficulty : {data.portion}</Card.Text>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Title> Liste d'ingredients : </Card.Title>
-                  {ingredientData?.map((item)=> {
-                    return (
-                      <div key={item.ingredientId}>
-                      <Card.Text> <span> {item.quantity} : </span> {item.name} </Card.Text>
-                      </div>
-                    )
-                  })}
-                </Card.Body>
-                <Card.Footer>
-                  <Card.Title> Etapes : </Card.Title>
-                    {methodData?.map((step) => {
-                      return (
-                        <div key={step.methodId}>
-                          <Card.Subtitle> Method :  {step.stepNumber} </Card.Subtitle>
-                          <Card.Text> {step.description} </Card.Text>
-                        </div>
-                      )
-                    })}
-                </Card.Footer>
-            </Card>
-            )
-        })}
+    <div >
+        { cocktailData &&
+            <article  className='cocktail'>
+              <div  className='cocktail__header'>
+                <div>
+                  {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
+                </div>
+                <div>
+                  <h2>{cocktailData.title}</h2>
+                  <h3> Difficulty : {cocktailData.difficulty}</h3>
+                  <p> Description : {cocktailData.description}</p>
+                  <p> time : {cocktailData.time}</p>
+                  <p> portion : {cocktailData.portion}</p>
+                </div>
+              </div>
+              <div className='cocktail__body'>
+                <div className='cocktail__body_ingredients'>
+                    <h3> Liste d'ingredients : </h3>
+                    {ingredientData?.map((item) => {
+                        if(item.cocktailId === cocktailData.cocktailId) {
+                          return (
+                            <ul>
+                              <li key={item.ingredientId}>
+                                <p>  {item.quantity},  {item.name} </p>
+                              </li>
+                            </ul>
+                          )
+                        }
+                        return null;
+                      })}
+                  </div>
+                  <div className='cocktail__body_methods'>
+                    <h3> Etapes : </h3>
+                      {methodData?.map((step) => {
+                        if(step.cocktailId === cocktailData.cocktailId) {
+                          return (
+                            <div key={step.methodId}>
+                              <p> Method :  {step.stepNumber} </p>
+                              <p> {step.description} </p>
+                            </div>
+                          )
+                        }
+                        return null;
+                      })}
+                  </div>
+                </div>
+            </article>
+            
+        }
     </div>
   )
 }
-
-export default CocktailOne;

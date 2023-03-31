@@ -1,4 +1,4 @@
-.cocktail {
+.cocktails {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,4 +7,23 @@
     &__card {
         margin: 1rem;
     }
+}
+.cocktail {
+    display: flex;
+    flex-direction: column;
+    &__header {
+        display: flex;
+        flex-direction: row;
+    }
+    &__body {
+        display: flex;
+        flex-direction: row;
+        &_ingredients {
+            flex: 1;
+        }
+        &_methods {
+            flex:1;
+        }
+    }
+
 }
