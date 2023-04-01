@@ -22,7 +22,7 @@ export default function CocktailList() {
     }, [])
    
   return (
-    <div  className='cocktail'>
+    <div  className='cocktails'>
         {cocktailData && cocktailData.map((data)=> {
             return (
             <Card style={{ width: '18rem' }} className='cocktails__card' key={data.cocktailId}>
