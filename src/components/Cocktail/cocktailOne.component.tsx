@@ -36,27 +36,27 @@ export default function CocktailOne() {
                 </div>
                 <div>
                   <h2>{cocktailData.title}</h2>
-                  <h3> Difficulty : {cocktailData.difficulty}</h3>
+                  <h3> Difficulté : {cocktailData.difficulty}</h3>
                   <p> Description : {cocktailData.description}</p>
-                  <p> time : {cocktailData.time}</p>
-                  <p> portion : {cocktailData.portion}</p>
+                  <p> Time : {cocktailData.time}</p>
+                  <p> Portion : {cocktailData.portion}</p>
                 </div>
               </div>
               <div className='cocktail__body'>
                 <div className='cocktail__body_ingredients'>
                     <h3> Liste d'ingredients : </h3>
+                    <ul>
                     {ingredientData?.map((item) => {
                         if(item.cocktailId === cocktailData.cocktailId) {
                           return (
-                            <ul>
                               <li key={item.ingredientId}>
                                 <p>  {item.quantity},  {item.name} </p>
                               </li>
-                            </ul>
                           )
                         }
                         return null;
                       })}
+                            </ul>
                   </div>
                   <div className='cocktail__body_methods'>
                     <h3> Etapes : </h3>
@@ -64,7 +64,7 @@ export default function CocktailOne() {
                         if(step.cocktailId === cocktailData.cocktailId) {
                           return (
                             <div key={step.methodId}>
-                              <p> Method :  {step.stepNumber} </p>
+                              <p> Method {step.stepNumber} : </p>
                               <p> {step.description} </p>
                             </div>
                           )
