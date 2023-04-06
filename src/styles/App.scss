@@ -7,14 +7,31 @@
 @import './cocktail.style.scss';
 @import './index.style.scss';
 
+:root {
+    --color-bleu-gray:#2c3e50;
+    --color-gray:#7f8c8d;
+    --color-amour:#ee5253;
+    --color-imperial:#222f3e;
+    --color-tomate:#eb2f06;
+    --color-lightBleuBallerina: #c8d6e5;
+    --color-darkSapphire: #0c2461;
+}
+
 .darkMode {
-    background: #1d1b1b;
-    color: rgb(219, 44, 44);
+    background-color: var(--color-imperial) !important;
+    color: var(--color-amour)!important;
 }
+
+#root {
+    background-color: var(--color-darkSapphire);
+}
+
 .lightMode {
-    background: red;
-    color: #000;
+    background-color: var( --color-gray)!important;
+    color: var(--color-bleu-gray) !important;
 }
+
+
 h1, h2 {
     text-align: center;
 }

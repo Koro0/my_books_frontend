@@ -1,7 +1,9 @@
 .footer {
-    padding: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e55039;
+
     &__Box {
-        background-color: #e55039;
         display: flex;
     }
     &__Social {
@@ -12,5 +14,9 @@
     }
     &__Thematique {
         flex: 1;
+    }
+    &__Copy {
+        text-align: center;
+        font-size: 1.2rem ;
     }
 }
