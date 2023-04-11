@@ -14,7 +14,7 @@ import ThemeIconDark  from '../../assets/ligthMode/ampouleBlack.png';
 export default function Header() {
   const  {darkMode, setDarkMode}= useContext(Context);
   return (
-    <Navbar collapseOnSelect expand="lg" bg={!darkMode?"dark":"#f8c291"} variant="dark">
+    <Navbar className={!darkMode?"darkMode":"lightMode"} collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <Logo />
