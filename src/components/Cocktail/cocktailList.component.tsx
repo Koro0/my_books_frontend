@@ -26,15 +26,15 @@ export default function CocktailList() {
         {cocktailData && cocktailData.map((data)=> {
             return (
             <Card style={{ width: '18rem' }} className='cocktails__card' key={data.cocktailId}>
-                {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
+                {data.image?  <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> : null }
                 <Card.Body>
                 <Card.Title className='cocktails__title'>{data.title}</Card.Title>
-                <Card.Text> Difficulty : {data.difficulty}</Card.Text>
+                <Card.Text> Difficultés : {data.difficulty}</Card.Text>
                 <Card.Text> Description : {data.description}</Card.Text>
-                <Card.Text> Time : {data.time}</Card.Text>
-                <Card.Text> Portion : {data.portion}</Card.Text>
+                <Card.Text> Temps : {data.time}</Card.Text>
+                <Card.Text> Portion(s) : {data.portion}</Card.Text>
                 </Card.Body>
-                <Button onClick={()=> navigate(`/Cocktail/${data.cocktailId}`)} variant="primary">Go recipe !</Button>
+                <Button onClick={()=> navigate(`/Cocktail/${data.cocktailId}`)} className='cocktails__btn'>Consulter</Button>
             </Card>
             )
         })}
