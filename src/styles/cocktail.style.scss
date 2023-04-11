@@ -7,18 +7,24 @@
     &__card {
         margin: 1rem;
     }
+     /*&__btn {
+        
+    }*/
 }
 .cocktail {
     display: flex;
     flex-direction: column;
     margin: 4.5rem;
     background-color: var(--color-lightBleuBallerina);
+    padding: 1%;
+    border-radius: 30px;
     &__header {
         display: flex;
         flex-direction: row;
     }
     &__body {
         border-block: gray 10px solid;
+        
         display: flex;
         flex-direction: row;
         &_ingredients {
