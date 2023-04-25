@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import ShowComments from '../Comments/Comments.component';
 
 import { Drink, IngredientItem, MethodStep, CocktailRouteParams } from './cocktailInterfaces';
 
@@ -13,7 +14,7 @@ export default function CocktailOne() {
 
     useEffect(()=> {
         const fetchCocktail = async () => {
-            await axios.get(`http://localhost:3500/api/recipe/cocktail/`+ cocktailId
+            await axios.get(`http://localhost:3500/api/cocktail/`+ cocktailId
              ).then(({data}) => {
                 setCocktailData(data.cocktail);
                 setIngredientData(data.ingredients);
@@ -27,23 +28,23 @@ export default function CocktailOne() {
     console.log(cocktailData, ingredientData, methodData);
 
   return (
-    <div >
+    < >
         { cocktailData &&
-            <article  className='cocktail'>
+            <section  className='cocktail'>
               <div  className='cocktail__header'>
-                <div>
+                <>
                   {/* <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> */}
-                </div>
-                <div>
+                </>
+                <article>
                   <h2>{cocktailData.title}</h2>
                   <h3> Difficulté : {cocktailData.difficulty}</h3>
                   <p> Description : {cocktailData.description}</p>
                   <p> Time : {cocktailData.time}</p>
                   <p> Portion : {cocktailData.portion}</p>
-                </div>
+                </article>
               </div>
               <div className='cocktail__body'>
-                <div className='cocktail__body_ingredients'>
+                <article className='cocktail__body_ingredients'>
                     <h3> Liste d'ingredients : </h3>
                     <ul>
                     {ingredientData?.map((item) => {
@@ -57,25 +58,30 @@ export default function CocktailOne() {
                         return null;
                       })}
                             </ul>
-                  </div>
-                  <div className='cocktail__body_methods'>
+                  </article>
+                  <article className='cocktail__body_methods'>
                     <h3> Etapes : </h3>
                       {methodData?.map((step) => {
                         if(step.cocktailId === cocktailData.cocktailId) {
                           return (
                             <div key={step.methodId}>
-                              <p> Method {step.stepNumber} : </p>
+                              <h6> Method {step.stepNumber} : </h6>
                               <p> {step.description} </p>
                             </div>
                           )
                         }
                         return null;
                       })}
-                  </div>
+                  </article>
                 </div>
-            </article>
-            
+                <div>
+                  <article>
+                    <h3>Commentaire</h3>
+                      <ShowComments cocktailId={cocktailData.cocktailId} />
+                  </article>
+                </div>
+            </section>
         }
-    </div>
+    </>
   )
 }
