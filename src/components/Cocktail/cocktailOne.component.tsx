@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ShowComments from '../Comments/Comments.component';
 
-import { Drink, IngredientItem, MethodStep, CocktailRouteParams } from './cocktailInterfaces';
+import { Drink, IngredientItem, MethodStep, CocktailRouteParams } from '../Interface';
 
 
 export default function CocktailOne() {
