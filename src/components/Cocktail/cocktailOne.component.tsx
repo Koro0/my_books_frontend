@@ -77,7 +77,7 @@ export default function CocktailOne() {
                 <div>
                   <article>
                     <h3>Commentaire</h3>
-                      <ShowComments cocktailId={cocktailData.cocktailId} />
+                      <ShowComments ID={cocktailData.cocktailId} categories={"Cocktail"}/>
                   </article>
                 </div>
             </section>
