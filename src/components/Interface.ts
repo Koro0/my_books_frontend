@@ -38,3 +38,26 @@ export type CocktailRouteParams = {
 export interface CocktailProps {
     cocktail_id:string;
 }
+
+export interface Comments {
+    commentId:number,
+    commentText:string,
+    createdAt:Date,
+    userId:number,
+}
+
+export interface ShowCommentsProps {
+categories:string,
+ID : number
+}
+
+export interface Recipes {
+    recipeId:number,
+    title:string,
+    description:string,
+    image:string,
+    portion:string,
+    time:string,
+    addBy:number,
+    createdAt:Date
+}
