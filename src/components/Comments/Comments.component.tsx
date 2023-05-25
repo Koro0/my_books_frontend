@@ -1,16 +1,7 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
+import {Comments, ShowCommentsProps} from '../Interface'
 
-  interface Comments {
-    commentId:number,
-    commentText:string,
-    createdAt:Date,
-    userId:number,
-  }
-  interface ShowCommentsProps {
-    categories:string,
-    ID : number
-  }
  const ShowComments = (props: ShowCommentsProps) => {
     const [commentData, setCommentData] = useState<Comments[]>();
 
