@@ -34,7 +34,7 @@ export type Recipe = {
 
   
   return ( 
-    <div>
+    <>
     <section>
       <h1>Recipes</h1>
       <div className='recipes'>
@@ -64,7 +64,7 @@ export type Recipe = {
       }
       </div>
     </section>
-    </div>
+    </>
   )
 }
 export default Recipes
