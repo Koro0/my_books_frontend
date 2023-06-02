@@ -6,15 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import ShowDate from '../../components/utils/showDate.component';
+import { Recipe } from '../../components/Interface';
 
-export type Recipe = {
-  recipeId:number;
-  title:string;
-  image:string | null;
-  content:string | null;
-  author:number;
-  createdAt: Date;
-}
  function Recipes() {
   const [recipes, setRecipes] = useState<Recipe[] | null> ([]);
   const recipeURL= "http://localhost:3500/api/recipe/";

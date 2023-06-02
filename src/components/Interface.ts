@@ -61,3 +61,12 @@ export interface Recipes {
     addBy:number,
     createdAt:Date
 }
+
+export type Recipe = {
+    recipeId:number;
+    title:string;
+    image:string | null;
+    content:string | null;
+    author:number;
+    createdAt: Date;
+  }
