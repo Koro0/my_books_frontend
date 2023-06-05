@@ -1,21 +1,23 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
-import {Comments, ShowCommentsProps} from '../Interface'
+import {Comment, ShowCommentsProps} from '../Interface'
 
  const ShowComments = (props: ShowCommentsProps) => {
-    const [commentData, setCommentData] = useState<Comments[]>();
+    const [commentData, setCommentData] = useState<Comment[]>([]);
 
     useEffect(() => {
       const fetchCocktailComments =async () => {
-       await axios.get('http://localhost:3500/api/comment/'+props.categories+"/"+props.ID, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem('connect')}`,
+       await axios.get('http://localhost:3500/api/comment/'+props.categories+"/"+props.ID)
+      .then((res)=> {
+        const data = res.data;
+        if(data&&data.comments) {
+          setCommentData(data.comments)
         }
       })
-      .then((data)=> {setCommentData(data.data)})
       .catch((err)=> {console.error(err)})};
       fetchCocktailComments();
-    }, [props])
+    }, [props, commentData])
+
     
   return (
     <div>
@@ -27,7 +29,6 @@ import {Comments, ShowCommentsProps} from '../Interface'
             </article>
           )
         })}
-
     </div>
   )
 }
