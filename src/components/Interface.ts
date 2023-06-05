@@ -20,6 +20,7 @@ export interface Drinks {
 export interface IngredientItem {
     ingredientId:number;
     cocktailId:number;
+    recipeId:number,
     name:string;
     quantity:string;
 }
@@ -27,6 +28,7 @@ export interface IngredientItem {
 export interface MethodStep {
     methodId:number;
     cocktailId:number;
+    recipeId:number,
     stepNumber:number;
     description:string;
 }
@@ -35,15 +37,22 @@ export type CocktailRouteParams = {
     cocktailId:string;
 }
 
+export type RecipeRouteParams = {
+    recipeID:string;
+}
+
 export interface CocktailProps {
     cocktail_id:string;
 }
 
-export interface Comments {
+export interface Comment {
     commentId:number,
     commentText:string,
-    createdAt:Date,
     userId:number,
+    novelId: number,
+    recipeId: number,
+    cocktailId: number,
+    createdAt:Date,
 }
 
 export interface ShowCommentsProps {
