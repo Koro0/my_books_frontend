@@ -13,9 +13,7 @@ import { Recipe } from '../../components/Interface';
   const recipeURL= "http://localhost:3500/api/recipe/";
 
   const navigate= useNavigate();
-  const handleClick = (id:number) => {
-    navigate("/recipe/" + String(id));
-  }
+  
  
   useEffect(()=>{
     const fetchGetAllRecipe = async () => {
@@ -34,7 +32,7 @@ import { Recipe } from '../../components/Interface';
       {
         recipes!=null && recipes.map((data) => 
           { return (
-            <article className='recipes__list' key={data.recipeId + data.title}>
+            <article className='recipes__list card__box' key={data.recipeId + data.title}>
               <Card style={{ width: '18rem' }}>
                 {data.image && (<Card.Img  variant="top" src={data.image} alt="montrant une recette" />)}
                 <Card.Body>
@@ -42,7 +40,7 @@ import { Recipe } from '../../components/Interface';
                   <Card.Text>
                     {data.content}
                   </Card.Text>
-                  <Button onClick={()=> handleClick(data.recipeId)} variant="primary">Go somewhere</Button>
+                  <Button onClick={()=> navigate(`/recipe/${data.recipeId}`)} variant="primary">Go somewhere</Button>
                 </Card.Body>
                 <Card.Footer>
                   <Card.Subtitle>
