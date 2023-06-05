@@ -3,7 +3,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
-import { Drinks } from './cocktailInterfaces';
+import { Drinks } from '../Interface';
 
 export default function CocktailList() {
     const [cocktailData, setCocktailData]=useState<Drinks[]>();
@@ -11,7 +11,7 @@ export default function CocktailList() {
 
     useEffect(()=> {
         const fetchCocktail = async () => {
-            await axios.get('http://localhost:3500/api/recipe/cocktail'
+            await axios.get('http://localhost:3500/api/cocktail'
              ).then(({data}) => {
                 setCocktailData(data.cocktails);
             }).catch(() => {
@@ -25,8 +25,8 @@ export default function CocktailList() {
     <div  className='cocktails'>
         {cocktailData && cocktailData.map((data)=> {
             return (
-            <Card style={{ width: '18rem' }} className='cocktails__card' key={data.cocktailId}>
-                {data.image?  <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> : null }
+            <Card style={{ width: '18rem' }} className='cocktails__card card__box' key={data.cocktailId}>
+                {/*data.image?  <Card.Img  className='cocktail__img' src={data.image} alt={data.title} /> : null */}
                 <Card.Body>
                 <Card.Title className='cocktails__title'>{data.title}</Card.Title>
                 <Card.Text> Difficultés : {data.difficulty}</Card.Text>
