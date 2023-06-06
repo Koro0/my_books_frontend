@@ -34,7 +34,7 @@ function App() {
             <Route path='/recipes' element={<Recipes />} />
             <Route path='/add_recipes' element={<NewRecipe />} />
             <Route path='/novels' element={<Novels />} />
-            <Route path='/recipe/:id' element={<Recipe />} />
+            <Route path='/recipe/:recipeID' element={<Recipe />} />
             <Route path='/Connexion' element={<Connexions />} />
             <Route path='/user' element={<UserInterface />} />
             <Route path='/Blog' element={<Blog />} />
