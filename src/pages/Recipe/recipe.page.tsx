@@ -22,7 +22,7 @@ export default function ShowOneRecipe() {
       });
     }
     fetchRecipe();
-  }, [recipeID, recipeData])
+  }, [recipeID])
   console.log(recipeID);
 
   return (
