@@ -1,67 +1,40 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import { useForm, SubmitHandler } from "react-hook-form";
 
+interface FormInput {
+  Email:string,
+  Password:string,
+  Username:string
+}
 export default function Register() {
-  const [validated, setValidated] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors }
+  } = useForm<FormInput>();
 
-  const handleSubmit = (event:any) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+  console.log(watch("Password", "Email",)); // you can watch individual input by pass the name of the input
 
-    setValidated(true);
-  };
+  const onSubmit:SubmitHandler<FormInput> = data => console.log(data);
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            required
-            type="email"
-            placeholder="exemple@exemple.com"
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-              Email is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            required
-            type="password"
-            placeholder="Password"
-          />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-          <Form.Control.Feedback type="invalid">
-              Password is required
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
-          <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              aria-describedby="inputGroupPrepend"
-              required
-            />
-            <Form.Control.Feedback type="invalid">
-              Please choose a username.
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
-      </Row>
-      <Button type="submit">S'enregister</Button>
-    </Form>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <label>Email</label>
+      <input {...register("Email", {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})} defaultValue="" />
+      {errors.Email && <p>Email is required</p>}
+      <label>Password</label>
+      <input
+        {...register("Password", { required: true, maxLength: 10 })}
+      />
+      {errors.Password && <p>Password is required</p>}
+      <label>Pseudo :</label>
+      <input
+        {...register("Username", { required: true, maxLength: 20 })}
+      />
+      {errors.Password && <p>User Name is required</p>}
+      <input type="submit" />
+    </form>
   );
 }
