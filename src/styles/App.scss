@@ -23,7 +23,7 @@
 }
 
 #root {
-    background-color: var(--color-darkSapphire);
+    background-color: white;
 }
 
 .lightMode {
@@ -34,4 +34,8 @@
 
 h1, h2 {
     text-align: center;
+}
+
+.card__box {
+    box-shadow: 12px 8px 5px whitesmoke;
 }
