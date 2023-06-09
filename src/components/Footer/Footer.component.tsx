@@ -3,7 +3,7 @@ const Footer = () => {
     const toDate:Date = new Date(Date.now());
     return(
         <div className="footer">
-            <div className="footer__Box">
+            {/*<div className="footer__Box">
                 <div className="footer__Social">
                     <p>social icons </p>
                     <p>social icons </p>
@@ -20,7 +20,7 @@ const Footer = () => {
                 <div className="footer__Thematique">
                     <h3>Thematique</h3>
                 </div>
-            </div>
+            </div>*/}
             <div className="footer__Copy">Copyright YD  {toDate.getFullYear()} </div>
         </div>
     )
