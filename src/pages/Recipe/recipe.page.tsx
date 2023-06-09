@@ -28,7 +28,7 @@ export default function ShowOneRecipe() {
   return (
     <>
       {recipeData && 
-          <section>
+          <section className='recipe'>
             <h2>{recipeData.title}</h2>
             <img src={recipeData.image} alt="" />
             <article>
