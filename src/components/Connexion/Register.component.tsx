@@ -29,7 +29,7 @@ export default function Register() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <label>Email</label>
-      <input {...register("email", {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})} defaultValue="" />
+      <input {...register("email", {required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i,})} defaultValue="" />
       {errors.email && <p className="errorMsg">Email is required</p>}
       <label>Password</label>
       <input
@@ -41,7 +41,7 @@ export default function Register() {
         {...register("pseudo", { required: true, minLength: 5, maxLength: 20 })}
       />
       {errors.pseudo && <p className="errorMsg">User Name is required</p>}
-      <input type="submit" />
+      <input type="submit" value={"Créer mon compte"}/>
     </form>
   );
 }
