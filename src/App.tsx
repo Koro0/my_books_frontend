@@ -1,10 +1,14 @@
 import {useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+/**
+ * context:
+ */
+import ContextTheme from './components/Context/ContextTheme.component';
+import ContextAdmin from './components/Context/ContexteAdmin.component';
 //pages & component
 import Header from './components/Header/Header.component';
 import Recipes from './pages/Recipes/recipes.page';
-import Context from './components/Context/Context.component';
 import UserInterface from './pages/Profile/User.page';
 import Connexions from './pages/Connexion/Connexion.page';
 import Recipe from './pages/Recipe/recipe.page';
@@ -20,33 +24,36 @@ import AllCocktails from './pages/Cocktail/allCocktails.page';
 import './styles/App.scss';
 
 function App() {
-  const [darkMode, setDarkMode ]= useState(false)
+  const [darkMode, setDarkMode ]= useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   
   return (
     <BrowserRouter>
-      <Context.Provider value={{darkMode, setDarkMode }}>
+      <ContextTheme.Provider value={{darkMode, setDarkMode}}>
         <header>
             <Header />
         </header>
         <main>
-          <Routes>
-            <Route path='/' element={<Index />} />
-            <Route path='/recipes' element={<Recipes />} />
-            <Route path='/add_recipes' element={<NewRecipe />} />
-            <Route path='/novels' element={<Novels />} />
-            <Route path='/recipe/:recipeID' element={<Recipe />} />
-            <Route path='/Connexion' element={<Connexions />} />
-            <Route path='/user' element={<UserInterface />} />
-            <Route path='/Blog' element={<Blog />} />
-            <Route path='/Cocktail' element={<AllCocktails />} />
-            <Route path='/Cocktail/:cocktailId' element={<Cocktail />} />
-            <Route path='/*' element={<Error />} />
-          </Routes>
+          <ContextAdmin.Provider value={{ isAdmin, setIsAdmin}}>
+            <Routes>
+              <Route path='/' element={<Index />} />
+              <Route path='/recipes' element={<Recipes />} />
+              <Route path='/add_recipes' element={<NewRecipe />} />
+              <Route path='/novels' element={<Novels />} />
+              <Route path='/recipe/:recipeID' element={<Recipe />} />
+              <Route path='/Connexion' element={<Connexions />} />
+              <Route path='/user' element={<UserInterface />} />
+              <Route path='/Blog' element={<Blog />} />
+              <Route path='/Cocktail' element={<AllCocktails />} />
+              <Route path='/Cocktail/:cocktailId' element={<Cocktail />} />
+              <Route path='/*' element={<Error />} />
+            </Routes>
+          </ContextAdmin.Provider>
         </main>
         <footer>
           <Footer />
         </footer>
-      </Context.Provider>
+      </ContextTheme.Provider>
     </BrowserRouter>
     );
 }

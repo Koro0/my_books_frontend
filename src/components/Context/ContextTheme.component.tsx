@@ -5,9 +5,9 @@ type ThemeContexte = {
     setDarkMode: (value: boolean) => void;
 }
 
-const Context = createContext<ThemeContexte>({
+const ContextForTheme = createContext<ThemeContexte>({
     darkMode: false,
     setDarkMode: () => {},
 })
 
-export default Context;
+export default ContextForTheme;
