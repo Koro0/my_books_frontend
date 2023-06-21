@@ -21,7 +21,6 @@ export default function Register() {
       })
       .then(()=> console.log('Account was created'))
       .catch(()=> console.log('error register'));
-      console.log(JSON.stringify(data));
   };
 
   return (
