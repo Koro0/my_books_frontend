@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import Context from '../../components/Context/Context.component';
+import Context from '../../components/Context/ContextTheme.component';
 
 export default function Index() {
     const  {darkMode}= useContext(Context);
