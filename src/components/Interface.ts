@@ -60,6 +60,11 @@ categories:string,
 ID : number
 }
 
+export interface createComment {
+    commentText:string, 
+    userId:number
+}
+
 export interface Recipes {
     recipeId:number,
     title:string,
