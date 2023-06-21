@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 import {Comment, ShowCommentsProps} from '../Interface'
+import CreateComment from '../Comments/CreateComment.component'
 
  const ShowComments = (props: ShowCommentsProps) => {
     const [commentData, setCommentData] = useState<Comment[]>([]);
@@ -20,7 +21,7 @@ import {Comment, ShowCommentsProps} from '../Interface'
 
     
   return (
-    <div>
+    <>
         {commentData && commentData.map((datas) => {
           return (
             <article key={datas.commentId}>
@@ -29,7 +30,14 @@ import {Comment, ShowCommentsProps} from '../Interface'
             </article>
           )
         })}
-    </div>
+        {commentData ? (
+          <article>
+            <h2>Aucun Commentaire</h2>
+            <h3>Soyez le premier a commenter</h3>
+          </article>
+        ): null}
+        <CreateComment ID={props.ID} categories={props.categories} />
+    </>
   )
 }
 export default ShowComments
