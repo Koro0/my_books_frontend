@@ -14,7 +14,12 @@ export default function CocktailOne() {
 
     useEffect(()=> {
         const fetchCocktail = async () => {
-            await axios.get(`http://localhost:3500/api/cocktail/`+ cocktailId
+            await axios.get(`http://localhost:3500/api/cocktail/`+ cocktailId,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Accept: 'application/json',}
+            }
              ).then(({data}) => {
                 setCocktailData(data.cocktail);
                 setIngredientData(data.ingredients);
@@ -25,7 +30,6 @@ export default function CocktailOne() {
         };
         fetchCocktail();
     }, [cocktailId]);
-    console.log(cocktailData, ingredientData, methodData);
 
   return (
     < >
