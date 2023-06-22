@@ -1,12 +1,15 @@
 import axios from "axios";
+import {useContext} from 'react';
 import { useForm, SubmitHandler } from "react-hook-form";
-
+import ContextAdmin from "../Context/ContexteAdmin.component";
 
 interface FormInput {
   email:string,
   password:string,
 }
 export default function Login() {
+  const  {setIsAdmin} = useContext(ContextAdmin);
+
   const {
     register,
     handleSubmit,
@@ -19,11 +22,15 @@ export default function Login() {
           'Content-Type': 'application/json'
           },
       })
-      .then((datas)=> {
-        localStorage.setItem('token', JSON.stringify(datas.data));
+      .then((res)=> {
+        localStorage.setItem('user', JSON.stringify(res.data.userId));
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+        (!res.data.isAdmin ? setIsAdmin(false) : setIsAdmin(true)); 
+        
       })
       .catch(()=> console.log('error login'));
       console.log(JSON.stringify(data));
+    
   };
 
   return (
