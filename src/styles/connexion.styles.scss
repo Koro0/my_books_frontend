@@ -2,6 +2,26 @@
     margin: 15%;
 }
 
+.connexion {
+    &_login {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    &_input {
+        background-color: cadetblue;
+        color: azure;
+    }
+    &_accountOrNot {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &_switchBtn {
+        border:none;
+    }
+}
 .errorMsg {
     color: red;
 }

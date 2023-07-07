@@ -2,19 +2,7 @@
     bottom: 0;
     width: 100%;
     background-color: #e55039;
-    position: fixed;
-    &__Box {
-        display: flex;
-    }
-    &__Social {
-        flex: 1;
-    }
-    &__Recipe {
-        flex: 1;
-    }
-    &__Thematique {
-        flex: 1;
-    }
+    //position: fixed;
     &__Copy {
         text-align: center;
         font-size: 1.2rem ;
