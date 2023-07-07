@@ -9,9 +9,11 @@ import Register from '../../components/Connexion/Register.component';
       <h1>{!loginRegister ? 'Login' : 'Register'}</h1>
       <div>
       {!loginRegister ? <Login /> : <Register />}
-    </div>
-      {!loginRegister ? (<p>Vous n’avez pas de compte ? </p>) : (<p>Vous avez un compte ?</p> ) }
-      <button onClick={()=> setLoginRegister(!loginRegister)}> {!loginRegister ? 'Inscrivez-vous' : 'Connectez-vous'}</button> 
+      </div>
+      <div className="connexion_accountOrNot">
+        {!loginRegister ? (<p>Pas de compte ? </p>) : (<p>Vous avez un compte ? </p> ) }
+        <button className='connexion_switchBtn' onClick={()=> setLoginRegister(!loginRegister)}> {!loginRegister ? 'Inscrivez-vous' : 'Connectez-vous'}</button> 
+      </div>
     </div>
   )
 }
