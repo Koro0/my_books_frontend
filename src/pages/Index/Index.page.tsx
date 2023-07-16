@@ -1,10 +1,7 @@
-import {useContext} from 'react'
-import Context from '../../components/Context/ContextTheme.component';
 
 export default function Index() {
-    const  {darkMode}= useContext(Context);
   return (
-    <div className={(!darkMode?"darkMode":"lightMode") + ' index'}>
+    <div className={'index'}>
         <h1>Bienvenue sur MyBooks, </h1>
         <p>
         Votre destination en ligne pour les amateurs de cuisine, 
@@ -17,7 +14,6 @@ export default function Index() {
            Explorez différentes cuisines du monde entier, 
           découvrez des techniques de cuisine pratiques et trouvez l'inspiration pour préparer des repas délicieux et équilibrés.</p>
         <p>De nouvelle outil sera ajouter au fils du temps et des propositions.</p>
-        <div>
         <h2>Cocktails :</h2>
         <p>Si vous êtes un amateur de cocktails, ne cherchez pas plus loin ! <br/>
         MyBooks vous offre une sélection de recettes de cocktails rafraîchissantes et sophistiquées.  <br/>
@@ -30,7 +26,6 @@ export default function Index() {
         
         <p>Notre interface conviviale facilite la navigation à travers ces trois catégories, vous permettant de trouver rapidement les recettes de cuisine, les cocktails ou les romans qui vous intéressent.<br/>
            De plus, vous pouvez également interagir avec d'autres utilisateurs, partager vos propres recettes, cocktails préférés et recommandations de livres, et participer à des forums de discussion dynamiques.</p>
-        </div>
     </div>
   )
 }
