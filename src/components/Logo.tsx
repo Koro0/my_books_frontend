@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Logo() {
     return (
-        <div>
+        <>
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                 width="45px" height="45px" viewBox="0 0 209.000000 164.000000"
                 preserveAspectRatio="xMidYMid meet">
@@ -20,6 +20,6 @@ export default function Logo() {
    45 0 45 0 0 45 0 45 -45 0 -45 0 0 81 0 82 115 -5 c105 -5 120 -8 162 -34z"/>
                 </g>
             </svg>
-        </div>
+        </>
     )
 }
