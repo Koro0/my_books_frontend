@@ -1,11 +1,12 @@
-@import 'bootstrap/dist/css/bootstrap.css';
-@import './header.style.scss';
+//@import 'bootstrap/dist/css/bootstrap.css';
+//@import './header.style.scss';
 @import './recipes.style.scss';
 @import './connexion.styles.scss';
 @import './footer.style.scss';
 @import './error.style.scss';
 @import './cocktail.style.scss';
 @import './index.style.scss';
+@import './headerHamburger.style.scss';
 
 :root {
     --color-bleu-gray:#2c3e50;
@@ -15,6 +16,13 @@
     --color-tomate:#eb2f06;
     --color-lightBleuBallerina: #c8d6e5;
     --color-darkSapphire: #0c2461;
+}
+
+* {
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    
 }
 
 .darkMode {

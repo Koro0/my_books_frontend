@@ -123,11 +123,9 @@ input {
     @media (min-width: 992px) {
         display: flex;
         flex-wrap: nowrap;
-        flex-direction: row;
         justify-content: space-evenly;
         button {
             display: none;
         }
     }
 }
-    
