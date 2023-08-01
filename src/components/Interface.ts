@@ -84,3 +84,14 @@ export type Recipe = {
     author:number;
     createdAt: Date;
   }
+
+export interface Novel {
+    novelId:number;
+    image:string;
+    title:string;
+    type:string;
+    author:string;
+    description:string;
+    likesCount:number;
+    createdAt:Date;
+}
