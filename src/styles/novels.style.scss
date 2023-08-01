@@ -1,0 +1,11 @@
+.novelList {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    grid-template-columns: repeat(4, 150px);
+    
+    &_item {
+        padding: 10px;
+        align-items: center;
+    }
+}
