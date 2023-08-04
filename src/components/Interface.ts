@@ -41,6 +41,10 @@ export type RecipeRouteParams = {
     recipeID:string;
 }
 
+export type NovelRouteParams = {
+    novelId:string;
+}
+
 export interface CocktailProps {
     cocktail_id:string;
 }
