@@ -23,9 +23,10 @@ export default function ShowNovels() {
     <>
       <ul className='novelList'>
         {novels && novels.map((data) => {
+          const novelPage = '/novels/' + data.novelId;
           return (
             <li className='novelList_item' key={data.novelId}>
-              <a href={`/$(data.novelId)`}> 
+              <a href={novelPage}> 
                 <img src={data.image} alt="image_novel" />
                 <h2>{data.title}</h2>
               </a>
