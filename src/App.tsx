@@ -8,18 +8,19 @@ import ContextTheme from './components/Context/ContextTheme.component';
 import ContextAdmin from './components/Context/ContexteAdmin.component';
 import ContextConnected from './components/Context/ContextConnected.component';
 //pages & component
-import HeaderBS from './components/Header/HeaderBS.component';
+//import HeaderBS from './components/Header/HeaderBS.component';
 import Header from './components/Header/Header.component';
 
 import Recipes from './pages/Recipes/recipes.page';
 import UserInterface from './pages/Profile/User.page';
-import Connexions from './pages/Connexion/Connexion.page';
+import Connexions from './pages/Connexion/connexion.page';
 import Recipe from './pages/Recipe/recipe.page';
 import Index from './pages/Index/Index.page';
 import Footer from './components/Footer/Footer.component';
 import Error from './pages/Error/error.page';
 import Blog from './pages/Blog/blog.page';
-import Novels from './pages/Novels/novel.page';
+import Novels from './pages/Novels/novels.page';
+import Novel from './pages/Novels/novel.page';
 import NewRecipe from './pages/New_recipe/newRecipe.page';
 import Cocktail from './pages/Cocktail/cocktail.page';
 import AllCocktails from './pages/Cocktail/allCocktails.page';
@@ -45,6 +46,7 @@ function App() {
                 <Route path='/recipes' element={<Recipes />} />
                 <Route path='/add_recipes' element={<NewRecipe />} />
                 <Route path='/novels' element={<Novels />} />
+                <Route path='/novels/:novelId' element={<Novel />} />
                 <Route path='/recipe/:recipeID' element={<Recipe />} />
                 <Route path='/Connexion' element={<Connexions />} />
                 <Route path='/user' element={<UserInterface />} />
