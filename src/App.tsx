@@ -21,6 +21,7 @@ import Error from './pages/Error/error.page';
 import Blog from './pages/Blog/blog.page';
 import Novels from './pages/Novels/novels.page';
 import Novel from './pages/Novels/novel.page';
+import Chapter from './pages/Novels/chapter.page';
 import NewRecipe from './pages/New_recipe/newRecipe.page';
 import Cocktail from './pages/Cocktail/cocktail.page';
 import AllCocktails from './pages/Cocktail/allCocktails.page';
@@ -47,6 +48,7 @@ function App() {
                 <Route path='/add_recipes' element={<NewRecipe />} />
                 <Route path='/novels' element={<Novels />} />
                 <Route path='/novels/:novelId' element={<Novel />} />
+                <Route path='/novels/:novelId/:chapterId' element={<Chapter />} />
                 <Route path='/recipe/:recipeID' element={<Recipe />} />
                 <Route path='/Connexion' element={<Connexions />} />
                 <Route path='/user' element={<UserInterface />} />
