@@ -27,7 +27,7 @@ export default function ShowNovels() {
           return (
             <li className='novelList_item' key={data.novelId}>
               <a href={novelPage}> 
-                <img src={data.image} alt="image_novel" />
+                {(!data.image?null:<img src={data.image} alt="image_novel" />)}
                 <h2>{data.title}</h2>
               </a>
             </li>
