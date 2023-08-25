@@ -23,13 +23,13 @@ export default function ShowNovel() {
     
   return (
     
-    <div>
+    <>
       {novel && 
       <div>
         <img src={novel.image} alt={novel.title} />
         <h1>{novel.title}</h1>
-        </div>
+      </div>
       }
-    </div>
+    </>
   )
 }
