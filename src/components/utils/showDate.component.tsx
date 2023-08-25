@@ -15,7 +15,7 @@ const ShowDate: FC<ShowDateProps> = ({ date }) => {
 }); 
   return (
     <div>
-      <p>at : {result}</p>
+      <p>Add : {result}</p>
     </div>
   )
 }
