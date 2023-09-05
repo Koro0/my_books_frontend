@@ -12,3 +12,20 @@
         align-items: center;
     }
 }
+
+.content {
+    &_paragraphs {
+        margin: 1% 2%;
+        font-size: 115%;
+    }
+}
+
+.NavChapter {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px;
+    
+  }
+  
+  

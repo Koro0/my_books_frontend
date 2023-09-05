@@ -1,8 +1,7 @@
-#connexion {
-    margin: 15%;
-}
+
 
 .connexion {
+    text-align: -webkit-center;
     &_login {
         display: flex;
         flex-direction: column;
@@ -21,7 +20,43 @@
     &_switchBtn {
         border:none;
     }
+
+    //style connexion page
+    &_box {
+        height: 600px;
+        width: 600px;
+        border-radius: 201px;
+        background-color: #D9D9D9;
+
+        form {
+            height: 377px;
+            width: 355px;
+            justify-content: center;
+        }
+        
+        input {
+            background-color: #ebebeb;
+            border: 1px solid;
+            border-color: #000000;
+            border-radius: 20px;
+            box-shadow: 0px 4px 4px #00000040;
+            height: 51px;
+            width: 347px;
+        }
+        label {
+            color: #000000;
+            font-family: "Inter-Regular", Helvetica;
+            font-size: 24px;
+            font-weight: 400;
+            height: 34px;
+            letter-spacing: 0;
+            line-height: normal;
+            width: 142px;
+        }
+    }
+    
 }
 .errorMsg {
     color: red;
 }
+
