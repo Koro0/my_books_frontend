@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /**
@@ -29,41 +29,58 @@ import AllCocktails from './pages/Cocktail/allCocktails.page';
 import './styles/App.scss';
 
 function App() {
-  const [darkMode, setDarkMode ]= useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isConneted, setIsConneted] = useState(false);
 
+  useEffect(() => {
+    const elt = document.getElementById('root');
+    const classNameElt = elt?.classList;
+    const SwitchToggle = () => {
+      if (darkMode) {
+        classNameElt?.add('lightMode');
+        classNameElt?.remove('darkMode');
+      } else {
+        classNameElt?.add('darkMode');
+        classNameElt?.remove('lightMode');
+      }
+    };
+    SwitchToggle();
+  }, [darkMode]);
   return (
     <BrowserRouter>
-      <ContextTheme.Provider value={{darkMode, setDarkMode}}>
-        <ContextConnected.Provider value={{isConneted, setIsConneted}}>
+      <ContextTheme.Provider value={{ darkMode, setDarkMode }}>
+        <ContextConnected.Provider value={{ isConneted, setIsConneted }}>
           <header>
-              <Header />
+            <Header />
           </header>
-          <main className={(!darkMode?"darkMode":"lightMode")} id='main'>
-            <ContextAdmin.Provider value={{ isAdmin, setIsAdmin}}>
+          <main id="main">
+            <ContextAdmin.Provider value={{ isAdmin, setIsAdmin }}>
               <Routes>
-                <Route path='/' element={<Index />} />
-                <Route path='/recipes' element={<Recipes />} />
-                <Route path='/add_recipes' element={<NewRecipe />} />
-                <Route path='/novels' element={<Novels />} />
-                <Route path='/novels/:novelId' element={<Novel />} />
-                <Route path='/novels/:novelId/:chapterId' element={<Chapter />} />
-                <Route path='/recipe/:recipeID' element={<Recipe />} />
-                <Route path='/Connexion' element={<Connexions />} />
-                <Route path='/user' element={<UserInterface />} />
-                <Route path='/Blog' element={<Blog />} />
-                <Route path='/Cocktail' element={<AllCocktails />} />
-                <Route path='/Cocktail/:cocktailId' element={<Cocktail />} />
-                <Route path='/*' element={<Error />} />
+                <Route path="/" element={<Index />} />
+                <Route path="/recipes" element={<Recipes />} />
+                <Route path="/add_recipes" element={<NewRecipe />} />
+                <Route path="/novels" element={<Novels />} />
+                <Route path="/novels/:novelId" element={<Novel />} />
+                <Route
+                  path="/novels/:novelId/:chapterId"
+                  element={<Chapter />}
+                />
+                <Route path="/recipe/:recipeID" element={<Recipe />} />
+                <Route path="/Connexion" element={<Connexions />} />
+                <Route path="/user" element={<UserInterface />} />
+                <Route path="/Blog" element={<Blog />} />
+                <Route path="/Cocktail" element={<AllCocktails />} />
+                <Route path="/Cocktail/:cocktailId" element={<Cocktail />} />
+                <Route path="/*" element={<Error />} />
               </Routes>
             </ContextAdmin.Provider>
           </main>
-            <Footer />
+          <Footer />
         </ContextConnected.Provider>
       </ContextTheme.Provider>
     </BrowserRouter>
-    );
+  );
 }
 
 export default App;
