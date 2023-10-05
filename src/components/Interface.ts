@@ -119,6 +119,7 @@ export interface ShowCardsProps {
   itemTitle: string;
   itemLink: string;
   itemImg: string;
+  itemClassName: string;
   recipePortion?: number;
   recipeTime?: string;
 }
