@@ -31,8 +31,8 @@
 }
 
 .darkMode {
-    background-color: var(--color-imperial) !important;
-    color: var(--color-amour)!important;
+    background-color: var(--color-imperial) ;
+    color: var(--color-amour);
 }
 
 // #root {
@@ -40,8 +40,8 @@
 // }
 
 .lightMode {
-    background-color: var( --color-gray)!important;
-    color: var(--color-bleu-gray) !important;
+    background-color: var( --color-gray);
+    color: var(--color-bleu-gray) ;
 }
 
 
@@ -62,4 +62,7 @@ ul {
 
 #imgSwitch {
     max-width: 20px;
+    right: 0;
+    margin: 0.5rem 1rem;
+    position: absolute;
 }
