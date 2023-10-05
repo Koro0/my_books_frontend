@@ -5,12 +5,12 @@
     align-items: stretch;
     justify-content: center;
     padding-bottom: 1rem;
-    &__card {
+    &_items {
         margin: 1rem;
+        border: solid 2px;
+        border-radius: 5px;
+        padding: 0.5rem;
     }
-     /*&__btn {
-        
-    }*/
 }
 .cocktail {
     display: flex;

@@ -1,15 +1,16 @@
 .novelList {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    list-style: none;
-    grid-template-columns: repeat(4, 200px);
     justify-content: space-evenly;
     justify-items: center;
-    align-content: stretch;
     
     &_item {
-        padding: 10px;
+        padding: 0.5rem;
+        margin: 1rem;
         align-items: center;
+        border: solid 5px;
+        border-radius: 5px;
     }
 }
 

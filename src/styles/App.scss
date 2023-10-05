@@ -21,9 +21,13 @@
 
 * {
     padding: 0;
-    margin:0;
     box-sizing: border-box;
     
+}
+
+* ::before ::after {
+    margin: 0;
+    padding: 0;
 }
 
 .darkMode {
@@ -31,9 +35,9 @@
     color: var(--color-amour)!important;
 }
 
-#root {
-    background-color: white;
-}
+// #root {
+//     background-color: white;
+// }
 
 .lightMode {
     background-color: var( --color-gray)!important;
@@ -51,8 +55,11 @@ h1, h2 {
 
 #main {
     padding: 50px;
-    min-height: 835px;
 }
 ul {
     list-style-type: none;
+}
+
+#imgSwitch {
+    max-width: 20px;
 }
