@@ -70,7 +70,7 @@ export interface createComment {
   userId: number;
 }
 
-export interface Recipes {
+export interface Recipe {
   recipeId: number;
   title: string;
   image: string;
@@ -79,11 +79,11 @@ export interface Recipes {
   createdAt: Date;
 }
 
-export type Recipe = {
+export type Recipes = {
   recipeId: number;
   title: string;
   description: string;
-  image: string | null;
+  image: string;
   content: string | null;
   author: number;
   createdAt: Date;
@@ -120,6 +120,5 @@ export interface ShowCardsProps {
   itemLink: string;
   itemImg: string;
   itemClassName: string;
-  recipePortion?: number;
-  recipeTime?: string;
+  itemDate?: Date;
 }
