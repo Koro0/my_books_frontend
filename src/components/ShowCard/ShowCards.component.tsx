@@ -1,5 +1,5 @@
-import React from 'react';
 import { ShowCardsProps } from '../Interface';
+import ShowDate from '../utils/showDate.component';
 
 export default function ShowCards(props: ShowCardsProps) {
   return (
@@ -9,8 +9,7 @@ export default function ShowCards(props: ShowCardsProps) {
           <img src={props.itemImg} alt={props.itemTitle} />
         )}
         <h2>{props.itemTitle}</h2>
-        {!props.recipeTime ? null : <p>Time : {props.recipeTime}</p>}
-        {!props.recipePortion ? null : <p>Time : {props.recipePortion}</p>}
+        {!props.itemDate ? null : <ShowDate date={props.itemDate} />}
       </a>
     </article>
   );
