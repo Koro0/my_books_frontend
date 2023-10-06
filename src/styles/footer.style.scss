@@ -1,9 +1,9 @@
 .footer {
     bottom: 0;
     width: 100%;
-    background-color: #e55039;
-    position:absolute;
-    //position: fixed;
+    height: 35px;
+    background-color: #ececec;
+    position: fixed;
     &__Copy {
         text-align: center;
         font-size: 1.2rem ;
