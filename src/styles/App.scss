@@ -8,6 +8,7 @@
 @import './index.style.scss';
 @import './headerHamburger.style.scss';
 @import './novels.style.scss';
+@import './comment.style.scss';
 
 :root {
     --color-bleu-gray:#2c3e50;
@@ -34,10 +35,6 @@
     background-color: var(--color-imperial) ;
     color: var(--color-amour);
 }
-
-// #root {
-//     background-color: white;
-// }
 
 .lightMode {
     background-color: var( --color-gray);
