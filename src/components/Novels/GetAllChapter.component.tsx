@@ -25,22 +25,23 @@ export default function GetAllChapter() {
     <>
       <h2>Recent Chapter :</h2>
       <ul>
-        <li>
-          <p></p>
-        </li>
         {allChapters && allChapters.map((chapter) => {
           const chapterLink = "/novels/" + chapter.novelId + "/"+chapter.chapterId;
           console.log(allChapters);
           return (
               <li key={chapter.chapterId}>
                 <a href={chapterLink}>
-                  <p>{chapter.chapterNumber}</p>
+                  <p>Chapter {chapter.chapterNumber} </p>
+                </a>
+                <a href={chapterLink}>
                   <p>{chapter.title}</p>
+                </a>
+                <a href={chapterLink}>
                   <ShowDate date={chapter.createdAt} />
                 </a>
               </li>
           )
-        })}
+        }).reverse()}
       </ul>
     </>
   )
