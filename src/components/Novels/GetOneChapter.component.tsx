@@ -14,7 +14,18 @@ export default function GetOneChapter(props:any) {
                 console.error(err);
             })
       }
+      const fetchVerifiedNextChapter = async() => {
+        const chapterNum = parseInt(props.chapter) +1;
+        await axios.get("http://localhost:3500/api/novel/"+ props.novel +"/chapter/" + chapterNum)
+          .then(()=> {
+            props.setChapterBool(true)
+          }).catch((err)=> {
+            console.error(err);
+            props.setChapterBool(false)
+          })
+      }
       fetchGetOneChapter();
+      fetchVerifiedNextChapter();
     }, [props])
     
   return (
