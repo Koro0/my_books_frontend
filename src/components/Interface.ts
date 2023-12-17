@@ -122,3 +122,13 @@ export interface ShowCardsProps {
   itemClassName: string;
   itemDate?: Date;
 }
+
+export interface FormData {
+  title: string;
+  description: string;
+  portion: string;
+  time: string;
+  ingredientList: IngredientItem[];
+  methodList: IngredientItem[];
+  image: FileList;
+}
