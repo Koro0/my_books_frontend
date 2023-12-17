@@ -57,6 +57,11 @@ export default function Header() {
             </Link>
           </li>
           <li className="classic_navbar_item">
+            <Link className="classic_navbar_link" to={'/Nutrition'}>
+              Nutrition
+            </Link>
+          </li>
+          <li className="classic_navbar_item">
             {!isConneted ? (
               <Link className="classic_navbar_link" to={'/Connexion'}>
                 Connexion
