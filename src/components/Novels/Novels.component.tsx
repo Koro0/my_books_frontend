@@ -1,42 +1,45 @@
-import React, {useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {Novel} from '../Interface'
+import { Novel } from '../Interface';
+import ShowCards from '../ShowCard/ShowCards.component';
 
 export default function ShowNovels() {
-  const [novels, setNovels] =useState<Novel[]>();
+  const [novels, setNovels] = useState<Novel[]>();
 
   useEffect(() => {
-    const fetchNovels =async () => {
-     await axios.get('http://localhost:3500/api/novel/')
-    .then((res)=> {
-      const response = res.data;
-      console.log(response.data)
-      if(response) {
-        setNovels(response.data)
-      }
-    })
-    .catch((err)=> {console.error(err)})};
+    const fetchNovels = async () => {
+      await axios
+        .get('http://localhost:3500/api/novel/')
+        .then((res) => {
+          const response = res.data;
+          console.log(response.data);
+          if (response) {
+            setNovels(response.data);
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    };
     fetchNovels();
-  }, [])
+  }, []);
 
   return (
-    <>
-      <ul className='novelList'>
-        {novels && novels.map((data) => {
+    <div className="novelList">
+      {novels &&
+        novels.map((data) => {
           const novelPage = '/novels/' + data.novelId;
           return (
-            <li className='novelList_item' key={data.novelId}>
-              <a href={novelPage}> 
-                {(!data.image?null:<img src={data.image} alt="image_novel" />)}
-                <h2>{data.title}</h2>
-              </a>
-            </li>
-          )
+            <ShowCards
+              itemId={data.novelId}
+              itemLink={novelPage}
+              itemImg={data.image}
+              itemTitle={data.title}
+              itemClassName={'novelList_item'}
+            />
+          );
         })}
-        {!novels && 
-          <h2>Oups, aucun novel retrouvé</h2>
-          }
-      </ul>
-    </>
-  )
+      {!novels && <h2>Oups, aucun novel retrouvé</h2>}
+    </div>
+  );
 }
