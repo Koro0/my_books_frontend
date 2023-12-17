@@ -8,13 +8,12 @@ import ContextTheme from './components/Context/ContextTheme.component';
 import ContextAdmin from './components/Context/ContexteAdmin.component';
 import ContextConnected from './components/Context/ContextConnected.component';
 //pages & component
-//import HeaderBS from './components/Header/HeaderBS.component';
 import Header from './components/Header/Header.component';
 
-import Recipes from './pages/Recipes/recipes.page';
+import Recipes from './pages/Recipes/allRecipes.page';
 import UserInterface from './pages/Profile/User.page';
 import Connexions from './pages/Connexion/connexion.page';
-import Recipe from './pages/Recipe/recipe.page';
+import Recipe from './pages/Recipes/oneRecipe.page';
 import Index from './pages/Index/Index.page';
 import Footer from './components/Footer/Footer.component';
 import Error from './pages/Error/error.page';
@@ -25,6 +24,7 @@ import Chapter from './pages/Novels/chapter.page';
 import NewRecipe from './pages/New_recipe/newRecipe.page';
 import Cocktail from './pages/Cocktail/cocktail.page';
 import AllCocktails from './pages/Cocktail/allCocktails.page';
+import IndexPageNutrition from './pages/Nutrition/index.page';
 
 import './styles/App.scss';
 
@@ -72,6 +72,7 @@ function App() {
                 <Route path="/Blog" element={<Blog />} />
                 <Route path="/Cocktail" element={<AllCocktails />} />
                 <Route path="/Cocktail/:cocktailId" element={<Cocktail />} />
+                <Route path="/Nutrition" element={<IndexPageNutrition />} />
                 <Route path="/*" element={<Error />} />
               </Routes>
             </ContextAdmin.Provider>
